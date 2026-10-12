@@ -7,7 +7,7 @@ import tachPromise from "./DataFetch"
 const App = () => {
   return (
     <>
-    <div className="px-30">
+    <div className="px-20">
       <NavBar/>
     <Banner/>
     <Suspense fallback="Loading...">

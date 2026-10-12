@@ -5,12 +5,14 @@ interface ItachCard{
   techitem:techType;
   index:number;
   setAddedCard:React.Dispatch<React.SetStateAction<techType[]>>;
-  addedCard:techType[]
+  addedCard:techType[];
+   countStack:number; 
+   setcountStack:React.Dispatch<React.SetStateAction<number>>
 
 
 }
 
-const TachCard = ({techitem,index,setAddedCard,addedCard}:ItachCard) => {
+const TachCard = ({techitem,index,setAddedCard,addedCard,countStack, setcountStack}:ItachCard) => {
 const textColors = [
   "text-red-500",
   "text-blue-500",
@@ -49,7 +51,8 @@ const bg = [
    const ClickHandler = ()=>{
         setAddToStack(true)
         setAddedCard([...addedCard, techitem])
-        
+
+        setcountStack(countStack+1)
 
    }
 
@@ -79,7 +82,7 @@ const bg = [
       <button
       onClick={ClickHandler} 
       disabled={addToStack}
-      className="mb-5 ml-8 rounded-2xl mt-3 w-90 h-10 bg-black text-white">
+      className="mb-5 ml-8 rounded-2xl mt-3 w-60 h-10 bg-black text-white">
     { addToStack?  "Added to Stack":"Add to Stack"}
       </button>
 
