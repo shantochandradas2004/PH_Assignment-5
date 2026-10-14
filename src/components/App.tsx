@@ -3,18 +3,25 @@ import Banner from "./Banner"
 import NavBar from "./NavBar"
 import DataMap from "./DataMap"
 import tachPromise from "./DataFetch"
+import Footer from "./Footer"
+import { ToastContainer } from "react-toastify"
 
 const App = () => {
+  
   return (
     <>
+<ToastContainer position="top-center" autoClose={3000} />
+
     <div className="px-20">
       <NavBar/>
     <Banner/>
     <Suspense fallback="Loading...">
       <DataMap tachPromise={tachPromise()}></DataMap>
     </Suspense>
-    
     </div>
+    <Footer/>
+    
+    
     </>
   )
 }

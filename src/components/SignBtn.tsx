@@ -7,10 +7,21 @@ const SignBtn = () => {
     }
     
   return (
-     <div>
-        <button  onClick={signHandler} className="btn hover:btn-secondary rounded-r-none">Sign in</button>
-        <button onClick={signHandler} className= "btn hover:btn-secondary rounded-l-none">Sign up</button>
-      </div>
+    <div className="flex items-center gap-2">
+  <button
+    onClick={signHandler} className="rounded-xl border border-gray-300 bg-white px-5 py-2 font-semibold text-gray-800 transition duration-200 hover:border-red-500 hover:bg-red-50 hover:text-red-600 active:scale-95 cursor-pointer"
+   
+  >
+    Sign in
+  </button>
+
+  <button
+    onClick={signHandler}
+    className="rounded-xl bg-red-400 px-5 py-2 font-semibold text-white shadow-sm transition duration-200 hover:bg-red-600 hover:shadow-md active:scale-95 cursor-pointer"
+  >
+    Sign up
+  </button>
+</div>
   )
 }
 
